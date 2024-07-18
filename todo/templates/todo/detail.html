@@ -5,6 +5,7 @@
     <title>To Do Application</title>
     <meta charset="UTF-8" />
     <meta name="author" content="INIAD" />
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/detail.css' %}">
   </head>
 
   <body>
@@ -21,9 +22,9 @@
     </ul>
 
     <div>
-      <a href="{% url 'index' %}">Top</a>
-      | <a href="{% url "update" task.id %}">Edit</a>
-      | <a href="{% url 'delete' task.id %}">Delete</a>
+      <a href="{% url 'index' %}" class="btn03 pushdown color1"><span>Top</span></a>
+      <a href="{% url 'update' task.id %}" class="btn03 pushdown color2"><span>Edit</span></a>
+      <a href="{% url 'delete' task.id %}" class="btn03 pushdown color3"><span>Delete</span></a>
     </div>
   </body>
 </html>
