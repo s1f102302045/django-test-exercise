@@ -1,0 +1,118 @@
+h1 {
+    padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: #f4f4f4;/*背景色*/
+    border-left: solid 5px #7db4e6;/*左線*/
+    border-bottom: solid 3px #d7d7d7;/*下線*/
+  }
+
+  ul, ol {
+    color: #668ad8;/*文字色*/
+    border: dashed 2px #668ad8;/*破線 太さ 色*/
+    background: #f1f8ff; /*背景色*/
+    padding: 0.5em 0.5em 0.5em 2em;
+  }
+  
+  ul li, ol li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+  }
+
+/* ボタン共通設定 */
+.btn03{
+    /*影の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+    text-align: center;
+    background: transparent;
+	border-radius: 25px;
+    color:#f1f8ff;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.2s ease;
+    margin: 10px;
+}
+
+/*hoverをした後のボタンの形状*/
+.btn03:hover{
+	border-color:transparent;	
+}
+
+/*ボタンの中のテキスト*/
+.btn03 span {
+	position: relative;
+	z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+	display: block;
+    padding: 10px 30px;
+	background:#fff;
+	border-radius: 25px;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease;
+}
+
+/*== 下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushdown:before {
+    content:"";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: -1;
+    top:4px;
+    left:0;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 25px;
+}
+
+/*hoverの際にY軸に4pxずらす*/
+.pushdown:hover span {
+	color: #fff;
+	transform: translateY(4px);
+}
+
+/* ボタン色1 */
+.btn03.color1 span {
+    background:#75b5e9;
+}
+
+.pushdown.color1:before {
+    background-color: #5292ce;
+}
+
+.pushdown.color1:hover span {
+    background-color: #5292ce;
+    color: #fff;
+}
+
+/* ボタン色2 */
+.btn03.color2 span {
+    background: #70e190;
+}
+
+.pushdown.color2:before {
+    background-color: #4bbb67;
+}
+
+.pushdown.color2:hover span {
+    background-color: #4bbb67;
+    color: #fff;
+}
+
+/* ボタン色3 */
+.btn03.color3 span {
+    background: #e97575;
+}
+
+.pushdown.color3:before {
+    background-color: #ce5252;
+}
+
+.pushdown.color3:hover span {
+    background-color: #ce5252;
+    color: #fff;
+}
