@@ -6,28 +6,32 @@
     <title>To Do Application</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/index.css' %}">
   </head>
 
   <body>
     <h1>Sample To Do Application</h1>
+    
+    <div class="form">
     <p>You can submit tasks from the following form.</p>
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
-      <div>
+      <div class="input_item">
         <label for="titleInput">Title</label><br>
         <input id="titleInput" name="title" type="text" placeholder="Input title">
       </div>
-      <div>
-        <label for="dueInput">Due at:</label><br>
-        <input id="dueInput" name="due_at" type="datetime-local">
+      <div class="input_item">
+        <label for="dueInput" id="dueLabel">Due at:</label><br>
+        <div id="due"><input id="dueInput" name="due_at" type="datetime-local"></div>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="buttonS"><span>Submit</span></button>
       </div>
     </form>
+    </div>
     <br>
-
-    <div>
+    <div id="detail">
+    <div id="order">
       <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
       <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
     </div>
@@ -48,6 +52,7 @@
       </ul>
     </div>
     {% endfor %}
+  </div>
   </body>
 
 </html>
